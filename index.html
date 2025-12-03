@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.jpg" sizes="32x32" type="image/png" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>ContentGuard - Профессиональная модерация</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              zinc: {
+                750: "#27272a",
+                850: "#202022",
+                950: "#09090b",
+              },
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              mono: ["JetBrains Mono", "monospace"],
+            },
+            animation: {
+              "fade-in": "fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+              "slide-up": "slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+              "pulse-soft": "pulseSoft 3s infinite",
+            },
+            keyframes: {
+              fadeIn: {
+                "0%": { opacity: "0" },
+                "100%": { opacity: "1" },
+              },
+              slideUp: {
+                "0%": { opacity: "0", transform: "translateY(15px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+              },
+              pulseSoft: {
+                "0%, 100%": { opacity: "1" },
+                "50%": { opacity: "0.7" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+
+      html,
+      body {
+        height: 100%;
+        overflow: hidden; /* Disable global scroll */
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #000000;
+        background-image: radial-gradient(
+          circle at 50% 0%,
+          #18181b 0%,
+          #000000 80%
+        );
+        color: #e4e4e7;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      /* Refined Premium Scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #3f3f46;
+        border-radius: 99px;
+        border: 1px solid transparent;
+        background-clip: content-box;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background-color: #71717a;
+      }
+
+      .glass-panel {
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .pro-shadow {
+        box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05),
+          0 10px 30px -10px rgba(0, 0, 0, 0.8);
+      }
+
+      .btn-spring {
+        transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .btn-spring:active {
+        transform: scale(0.96);
+      }
+
+      /* Utilities for hiding scrollbars but keeping functionality in some browsers if needed */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+    <script type="importmap">
+      {
+        "imports": {
+          "react": "https://aistudiocdn.com/react@^19.2.1",
+          "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+          "react/": "https://aistudiocdn.com/react@^19.2.1/",
+          "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+          "react-icons/": "https://aistudiocdn.com/react-icons@^5.5.0/"
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="/index.css" />
+  </head>
+  <body>
+    <div id="root" class="h-full"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
